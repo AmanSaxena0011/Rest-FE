@@ -1,0 +1,23 @@
+package com.qa.pet.test;
+
+import org.testng.annotations.BeforeMethod;
+
+import com.qa.pet.base.TestBase;
+
+public class GetApiTest extends TestBase{
+	TestBase testbase;
+	
+	@BeforeMethod
+	public void setup () {
+		
+		testbase = new TestBase();
+		String url = prop.getProperty("URL");
+		String apiurl = prop.getProperty("serviceURL");
+		
+		
+	}
+	
+	
+	
+
+}

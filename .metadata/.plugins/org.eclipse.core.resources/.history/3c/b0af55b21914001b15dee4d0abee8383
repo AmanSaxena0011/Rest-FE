@@ -1,0 +1,8 @@
+package com.qa.shop.utils;
+
+public class Constants {
+
+	public final static String SonyexpectedText = "Sony vaio i5";
+	public final static String DellexpectedText = "Dell i7 8gb";
+	
+}

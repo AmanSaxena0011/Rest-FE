@@ -1,0 +1,2 @@
+URL = https://petstore.swagger.io/
+serviceURL = #/pet/findByStatus

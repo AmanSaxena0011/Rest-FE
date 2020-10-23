@@ -1,0 +1,33 @@
+package com.qa.pet.test;
+
+import java.io.IOException;
+
+import org.apache.http.client.ClientProtocolException;
+import org.testng.annotations.BeforeMethod;
+
+import com.qa.pet.base.TestBase;
+import com.qa.pet.metods.RestClient;
+
+public class GetApiTest extends TestBase{
+	TestBase testbase;
+	
+	@BeforeMethod
+	public void setup () throws ClientProtocolException, IOException {
+		
+		testbase = new TestBase();
+		String serviceurl = prop.getProperty("URL");
+		String apiurl = prop.getProperty("serviceURL");
+		
+		String url = serviceurl + apiurl;
+		
+		
+		RestClient restClient = new RestClient();
+		restClient.get(url);
+		
+		
+	}
+	
+	
+	
+
+}

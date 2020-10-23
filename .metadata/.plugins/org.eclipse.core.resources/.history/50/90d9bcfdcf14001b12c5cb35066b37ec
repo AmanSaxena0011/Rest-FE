@@ -1,0 +1,30 @@
+package com.qa.pet.metods;
+
+import java.io.IOException;
+
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+
+public class RestClient {
+	
+public void get(String url) throws ClientProtocolException, IOException {
+	
+	CloseableHttpClient httpclient =  HttpClients.createDefault();
+	HttpGet httpget = new HttpGet(url);
+	CloseableHttpResponse httpresponse =   httpclient.execute(httpget);
+	
+	int statuscode = httpresponse.getStatusLine().getStatusCode();
+	System.out.println("Status Code -->>" + statuscode);
+	
+	String responseString = EntityUtils.toString(httpresponse.getEntity(),"UTF-8");
+	
+	
+	
+}
+	
+
+}

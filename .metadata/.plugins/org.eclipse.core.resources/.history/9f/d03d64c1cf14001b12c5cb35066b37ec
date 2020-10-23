@@ -1,0 +1,5 @@
+package com.qa.pet.metods;
+
+public class RestClient {
+
+}

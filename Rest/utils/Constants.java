@@ -1,0 +1,7 @@
+package com.qa.shop.utils;
+
+public class Constants {
+
+	public final static String ExpPurAmt = "Amount: 790 USD";
+	
+}

@@ -1,0 +1,2 @@
+URL = https://petstore.swagger.io/
+serviceURL = v2/pet/findByStatus?status=available

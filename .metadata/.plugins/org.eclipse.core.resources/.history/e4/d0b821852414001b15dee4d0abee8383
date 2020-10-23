@@ -1,0 +1,26 @@
+package com.qa.shop.test;
+
+import org.testng.annotations.Test;
+
+import com.qa.shop.base.BaseTest;
+import com.qa.shop.pages.HomePage;
+import com.qa.shop.utils.Constants;
+
+public class HomePageTest extends BaseTest{
+	
+	
+HomePage homepage;
+	
+
+	@Test(priority = 1)
+	public void verifyLaptop() throws InterruptedException  {
+		homepage = new HomePage(driver);
+		homepage.ProductAdd();
+		
+	
+		Assert.assertEquals(actualText, Constants.ExpPurAmt);
+	}
+	
+	
+	
+}

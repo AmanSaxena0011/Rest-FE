@@ -1,0 +1,7 @@
+package com.qa.pet.utils;
+
+public class Constants {
+
+	public final static int StatusCode200 = 200;
+	
+}

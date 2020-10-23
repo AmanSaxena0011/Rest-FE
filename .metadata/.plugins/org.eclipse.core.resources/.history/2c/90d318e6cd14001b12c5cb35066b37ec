@@ -1,0 +1,55 @@
+package com.qa.pet.base;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+public class BasePage {
+
+	public Properties prop;
+
+	public Properties init_properties() {
+
+		prop = new Properties();
+		String env = null;
+		String path = "./src/main/java/com/qa/pet/config/config.properties";
+
+		try {
+
+			env = System.getProperty("env");
+			System.out.println("Running of the current: --->> " + env + "Environment");
+			if (env == null) {
+				path = "./src/main/java/com/qa/pet/config/config.properties";
+			}
+
+			else {
+				switch (env) {
+				case "dev":
+					path = "./src/main/java/com/qa/pet/config/dev.config.properties";
+					break;
+				case "qa":
+					path = "./src/main/java/com/qa/pet/config/qa.config.properties";
+					break;
+				case "stag":
+					path = "./src/main/java/com/qa/pet/config/stag.config.properties";
+					break;
+
+				default:
+					System.out.println("Please provide correect env");
+					break;
+				}
+
+			}
+
+			FileInputStream inp = new FileInputStream(path);
+			prop.load(inp);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return prop;
+	}
+
+}

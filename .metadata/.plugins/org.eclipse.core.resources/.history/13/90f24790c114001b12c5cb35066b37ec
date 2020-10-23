@@ -1,0 +1,35 @@
+package com.qa.pet.base;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Properties;
+
+public class BasePage {
+	
+	public Properties prop;
+	
+	
+	
+	
+	
+	public BasePage() {
+		
+		
+		prop = new Properties();
+		FileInputStream ip;
+		try {
+			ip = new FileInputStream(System.getProperty("user.dir")+"src/main/java/com/qa/pet/config/config.properties");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+				prop.load(ip);
+				
+		
+		
+		
+		
+		
+	}
+
+}

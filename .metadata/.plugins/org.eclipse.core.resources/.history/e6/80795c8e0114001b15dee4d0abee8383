@@ -1,0 +1,5 @@
+package com.qa.shop.base;
+
+public class BaseTest {
+
+}

@@ -1,0 +1,24 @@
+package com.qa.shop.base;
+
+public class Stringtest {
+
+	public static void main(String[] args) {
+		String amt = "Thank you for your purchase!\r\n" + 
+				"Id: 9967223\r\n" + 
+				"Amount: 790 USD\r\n" + 
+				"Card Number: 12345678\r\n" + 
+				"Name: Aman\r\n" + 
+				"Date: 22/9/2020\r\n" + 
+				"OK";
+		
+		
+		
+		amt.indexOf("Amount: ");
+		String a = amt.substring(amt.indexOf("Amount: 7"), amt.indexOf("D"));
+		
+		
+	System.out.println(a);
+
+	}
+
+}

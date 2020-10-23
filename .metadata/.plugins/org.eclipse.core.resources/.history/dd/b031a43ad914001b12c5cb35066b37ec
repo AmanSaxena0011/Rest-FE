@@ -1,0 +1,38 @@
+package com.qa.pet.test;
+
+import java.io.IOException;
+
+import org.apache.http.client.ClientProtocolException;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.qa.pet.base.TestBase;
+import com.qa.pet.metods.RestClient;
+import com.qa.pet.utils.Constants;
+
+public class GetApiTest extends TestBase {
+	TestBase testbase;
+	String url;
+	RestClient restClient;
+	Constants constants;
+
+	@BeforeMethod
+	public void setup() throws ClientProtocolException, IOException {
+
+		testbase = new TestBase();
+		url = "https://petstore.swagger.io/v2/pet/findByStatus?status=available";
+	}
+
+	@Test
+
+	public void getAPITest() throws ClientProtocolException, IOException {
+
+		restClient = new RestClient();
+		constants = new Constants();
+		restClient.get(url);
+		int actual = RestClient.statuscode;
+		Assert.assertEquals(actual,StatusCode200);
+	}
+
+}
